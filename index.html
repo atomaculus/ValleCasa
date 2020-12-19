@@ -186,27 +186,28 @@
             <div class="row mt-5 pt-1">
                 <div id="formulario" class="col-6">
                     <h4 id="titulocontacto" class="pb-2">CONTACTO</h4>
+
                     <form class="pt-2" name="contact" method="POST" data-netlify="true">
                         <div class="form-group">
+                            <p><label><input type="email" name="email" class="form-control"
+                                        id="exampleFormControlInput1" placeholder="E-mail"></label></p>
 
-                            <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
-                                placeholder="E-mail">
                         </div>
                         <div class="form-group">
 
-                            <input type="text" name="nombre" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Nombre">
+                            <p><label><input type="text" name="name" class="form-control" id="exampleFormControlInput1"
+                                        placeholder="Nombre"></label></p>
                         </div>
 
                         <div class="form-group">
-                            <input type="tel" name="telefono" class="form-control" id="exampleFormControlInput1"
-                                placeholder="Telefono">
+                            <p><label><input type="tel" name="telefono" class="form-control"
+                                        id="exampleFormControlInput1" placeholder="Telefono"></label></p>
                         </div>
 
                         <div class="form-group">
 
-                            <textarea name="message" class="form-control" id="exampleFormControlTextarea1" rows="3"
-                                placeholder="Comentarios"></textarea>
+                            <p><label><textarea name="message" class="form-control" id="exampleFormControlTextarea1"
+                                        rows="3" placeholder="Comentarios"></textarea></label></p>
                         </div>
                         <input id="contacto" class="btn btn-primary float-right" type="submit" value="Enviar">
 
