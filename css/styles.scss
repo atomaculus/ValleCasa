@@ -1,3 +1,4 @@
+@import'responsive';
 //fuente
 
 @font-face {
@@ -16,6 +17,7 @@
     font-weight: normal;
     font-style: normal;
 }
+
 
 
 body * {
@@ -46,7 +48,9 @@ header {
         //position: fixed;
         right: 0;
         bottom: 0;
-        min-width: 100%;
+
+        width: 100%;
+        //min-width: 100%;
         min-height: 100%;
     }
 }
@@ -82,8 +86,16 @@ header {
     }
 
 
-    .parrafos-main p {
-        font-family: "Montserrat";
+    .parrafos-main {
+        p {
+            font-family: "Montserrat";
+
+
+        }
+
+        #foto-comidas {
+            width: 100%;
+        }
     }
 
     #parr-nuestra-casa {
