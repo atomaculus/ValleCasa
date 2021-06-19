@@ -122,3 +122,125 @@ function descuento(num1) {
         return descuentoAplicado;
     }
 }
+
+
+
+class MenuEjec {
+    constructor(entrada, principal, postre, bebida) {
+        this.entrada = entrada;
+        this.principal = principal;
+        this.postre = postre;
+        this.bebida = bebida;
+    }
+
+    mostrameQueTenes() {
+        console.log(this.entrada + this.principal + this.postre + this.bebida)
+    }
+}
+
+const menu1 = new MenuEjec("Ensalada, ", "ñoquis con crema, ", "flan, ", "coca-cola")
+const menu2 = new MenuEjec("sopa, ", "milanesa con pure, ", "helado, ", "vino o cerveza")
+const menu3 = new MenuEjec("picada, ", "hamburgesa con papas fritas, ", "brownie con helado, ", "Agua")
+
+
+let opcionMenu
+let eleccion
+const arrayMenus = []
+
+for (let i = 0; i < opcionPersonas; i++) {
+    opcionMenu = alert("Que menu te gustaria elegir? te los muestro por consola")
+    console.log(menu1.mostrameQueTenes())
+    console.log(menu2.mostrameQueTenes())
+    console.log(menu3.mostrameQueTenes())
+
+    eleccion = Number(prompt("Elegiste? decime cual queres con un numero"))
+
+    if (eleccion === 1 || eleccion === 2 || eleccion === 3) {
+
+
+        arrayMenus.push(eleccion)
+
+        let next = alert("siguiente persona " + [i + 1] + "/" + opcionPersonas)
+
+    } else {
+        alert("Ese no es un menu disponible")
+    }
+
+
+}
+
+console.log(arrayMenus)
+const burgers = arrayMenus.filter(menu => menu === 2)
+console.log(burgers.length)
+
+//Armador de hamburguesa 
+
+let alertaArmadora
+const arrayBurger = []
+const arrayDeObjetoDeObjeto = []
+class ArmadorBurger {
+    constructor(id, precio, cantidad, nombre) {
+        this.id = id
+        this.precio = precio
+        this.cantidad = cantidad
+        this.nombre = nombre
+    }
+
+    nombreIngredientes() {
+        console.log(this.nombre);
+    }
+}
+
+const pan = new ArmadorBurger(1, 50, 1, "pan")
+const carnes = new ArmadorBurger(1, 50, 1, "carnes")
+const quesoCheddar = new ArmadorBurger(1, 50, 1, "cheddar")
+const quesoRoque = new ArmadorBurger(1, 50, 1, "roquefort")
+const lechuga = new ArmadorBurger(1, 50, 1, "lechuga")
+const tomate = new ArmadorBurger(1, 50, 1, "tomate")
+const cebolla = new ArmadorBurger(1, 50, 1, "cebolla")
+const jamon = new ArmadorBurger(1, 50, 1, "jamon")
+
+alertaArmadora = alert("Bienvenido al armador de hamburguesas para los que seleccionaron el menu 2, los ingredientes te los muestro por consola")
+
+console.log(pan)
+console.log(carnes)
+console.log(quesoCheddar)
+console.log(quesoRoque)
+console.log(lechuga)
+console.log(tomate)
+console.log(cebolla)
+console.log(jamon)
+
+
+for (let i = 0; i < burgers.length; i++) {
+
+    let ingresoIngrediente = prompt("Ingresa los ingredientes que queres separados por una ,")
+    let unoPoruno = ingresoIngrediente.split(",")
+    console.log(unoPoruno)
+
+
+    if (unoPoruno[i] == pan.nombreIngredientes()) {
+        arrayBurger.push(pan)
+    } else if (unoPoruno[i] == carnes.nombreIngredientes()) {
+        arrayBurger.push(carnes)
+
+        console.log(arrayBurger)
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//lo proximo, meter un msj que sea gracias por informarme, despues meter en un array la cantidad y tipos de menu elegidos
+//array de objetos para armar hamburguesa 
