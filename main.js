@@ -4,6 +4,7 @@ let opcionHora;
 function escogerCantidadPersonas() {
     const personas = parseInt(prompt('Que bueno! Cuantas personas van a ser? Por el Covid-19 permitimos mesas de hasta 10 personas'));
 
+
     if (personas === 0 || personas > 10 || !personas) {
         prompt('Lo siento, solo aceptamos hasta 10 personas y 1 como mínimo. Ingresa un numero valido');
         return personas;
@@ -170,14 +171,15 @@ for (let i = 0; i < opcionPersonas; i++) {
 }
 
 console.log(arrayMenus)
-const burgers = arrayMenus.filter(menu => menu === 2)
+const burgers = arrayMenus.filter(menu => menu === 3)
 console.log(burgers.length)
 
 //Armador de hamburguesa 
 
 let alertaArmadora
-const arrayBurger = []
-const arrayDeObjetoDeObjeto = []
+
+
+const hamburguesaDelUser = []
 class ArmadorBurger {
     constructor(id, precio, cantidad, nombre) {
         this.id = id
@@ -200,39 +202,104 @@ const tomate = new ArmadorBurger(1, 50, 1, "tomate")
 const cebolla = new ArmadorBurger(1, 50, 1, "cebolla")
 const jamon = new ArmadorBurger(1, 50, 1, "jamon")
 
-alertaArmadora = alert("Bienvenido al armador de hamburguesas para los que seleccionaron el menu 2, los ingredientes te los muestro por consola")
-
-console.log(pan)
-console.log(carnes)
-console.log(quesoCheddar)
-console.log(quesoRoque)
-console.log(lechuga)
-console.log(tomate)
-console.log(cebolla)
-console.log(jamon)
+const arrayBurger = [pan, carnes, quesoCheddar, quesoRoque, lechuga, tomate, cebolla, jamon]
 
 
-for (let i = 0; i < burgers.length; i++) {
+if (burgers.length !== 0) {
+    alertaArmadora = alert("Bienvenido al armador de hamburguesas para los que seleccionaron el menu 3")
 
-    let ingresoIngrediente = prompt("Ingresa los ingredientes que queres separados por una ,")
-    let unoPoruno = ingresoIngrediente.split(",")
-    console.log(unoPoruno)
+    seleccionIngr()
 
 
-    if (unoPoruno[i] == pan.nombreIngredientes()) {
-        arrayBurger.push(pan)
-    } else if (unoPoruno[i] == carnes.nombreIngredientes()) {
-        arrayBurger.push(carnes)
+    // console.log(pan)
+    // console.log(carnes)
+    // console.log(quesoCheddar)
+    // console.log(quesoRoque)
+    // console.log(lechuga)
+    // console.log(tomate)
+    // console.log(cebolla)
+    // console.log(jamon)
 
-        console.log(arrayBurger)
+    function seleccionIngr() {
+        for (let i = 0; i < burgers.length; i++) {
+            let opcion = alert("Podes elegir hasta 8 ingredientes")
+
+
+            for (let i = 0; i < 8; i++) {
+                let alerta2 = prompt("Elegi lo que queres, indicamelo con el nombre " + JSON.stringify(arrayBurger))
+                switch (alerta2) {
+                    case "pan":
+                        console.log(arrayBurger[0])
+                        hamburguesaDelUser.push(arrayBurger[0])
+                        break;
+                    case "carnes":
+                        console.log(arrayBurger[1])
+                        hamburguesaDelUser.push(arrayBurger[1])
+                        break;
+                    case "cheddar":
+                        console.log(arrayBurger[2])
+                        hamburguesaDelUser.push(arrayBurger[2])
+                        break;
+                    case "roquefort":
+                        console.log(arrayBurger[3])
+                        hamburguesaDelUser.push(arrayBurger[3])
+                        break;
+                    case "lechuga":
+                        console.log(arrayBurger[4])
+                        hamburguesaDelUser.push(arrayBurger[4])
+                        break;
+                    case "tomate":
+                        console.log(arrayBurger[5])
+                        hamburguesaDelUser.push(arrayBurger[5])
+                        break;
+                    case "cebolla":
+                        console.log(arrayBurger[6])
+                        hamburguesaDelUser.push(arrayBurger[6])
+                        break;
+                    case "jamon":
+                        console.log(arrayBurger[7])
+                        hamburguesaDelUser.push(arrayBurger[7])
+                        break;
+
+                    default:
+                        break;
+                }
+
+            }
+
+
+
+        }
 
 
     }
+
+
+    console.log(hamburguesaDelUser)
+} else {
+    alert("gran eleccion de menu")
 }
 
 
 
 
+
+//json stingify 
+
+
+
+
+// let ingresoIngrediente = prompt("Ingresa los ingredientes que queres separados por una ,")
+// let unoPoruno = ingresoIngrediente.split(",")
+// console.log(unoPoruno)
+
+
+// if (unoPoruno[i] == pan.nombreIngredientes()) {
+//     arrayBurger.push(pan)
+// } else if (unoPoruno[i] == carnes.nombreIngredientes()) {
+//     arrayBurger.push(carnes)
+
+//     console.log(arrayBurger)
 
 
 
