@@ -76,6 +76,10 @@ header #navigation {
   border: #db8f79;
 }
 
+.claseDisable {
+  display: none !important;
+}
+
 #titulo,
 #casanostra,
 #nuestrachosa,
