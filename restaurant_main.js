@@ -110,6 +110,10 @@ btnSubmit.addEventListener("click", function (event) {
 
 })
 
+btnreset.addEventListener("click", function (event) {
+    arrayIngr = [];
+})
+
 class hamburgesasAlVapor {
     constructor(ingredientes) {
 
