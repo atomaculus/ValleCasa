@@ -298,54 +298,21 @@
 //MINUTO 1.24 FUNCION GET.LOCALSTORAGE
 //MIN 1.40 hace un ejemploccopado tmb
 
-// funcion para guardar en local storage
-function saveLocalStorage(key, item) {
-    let stringifiedItem = JSON.stringify(item);
-    localStorage.setItem(key, stringifiedItem);
-}
 
-// funcion para traer el elemento del local storage
-function getLocalStorage(key) {
-    return JSON.parse(localStorage.getItem(key));
-}
 
-// function getLocalStorageString(key) {
-//     return JSON.stringify(localStorage.getItem(key));
+
+// }() => {
+//     let contenedor = document.createElement("div")
+
+//     contenedor.innerHTML = `<h4> los ingredientes elegidos son ${arrayIngr}</h4>`
+
+//     document.body.appendChild(contenedor);
+// })
+
+// if (btnSubmit.addEventListener("click", ())) {
+//     let contenedor = document.createElement("div")
+
+//     contenedor.innerHTML = `<h4> los ingredientes elegidos son ${arrayIngr}</h4>`
+
+//     document.body.appendChild(contenedor);
 // }
-
-let selectorPersonas = document.querySelector('#selectorPersonas')
-let amPm = document.querySelectorAll('.amPm')
-let horarioEspecificoAm = document.querySelectorAll('.horarioEspecificoAm')
-let horarioEspecificoPm = document.querySelectorAll('.horarioEspecificoPm')
-let btnArmador = document.querySelector('#btnArmador')
-let btnCantidadBurgas = document.querySelector('#btnCantidadBurgas')
-let seccionIngredientes = document.querySelector('#seccionIngredientes')
-let aclaraciones = document.querySelector('textarea')
-let btnsubmit = document.querySelector('#btnsubmit')
-let btnreset = document.querySelector('#btnreset')
-
-
-
-selectorPersonas.addEventListener('change', () => saveLocalStorage("cantidad", selectorPersonas.value))
-
-//Aca llevo el valor al LS
-amPm.forEach(amPm => amPm.addEventListener('change', () => saveLocalStorage("momento", amPm.value)))
-//Aca me lo traigo para el if
-amPm = getLocalStorage("momento")
-
-
-
-
-if (amPm.value === "mediodia") {
-    horarioEspecificoPm.forEach(horario => horarioEspecificoPm.classList.add('claseDisable'));
-
-} else if (amPm === "noche") {
-    //disable horarios mediodia
-    horarioEspecificoAm.forEach(horario => document.querySelector('.horarioEspecificoAm').innerHTML = "")
-}
-
-// btnArmador.addEventListener('click', () => )
-
-
-let muestroElArmador = document.createElement('div')
-muestroElArmador.innerHTML = ""
