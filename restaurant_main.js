@@ -58,13 +58,20 @@ amPm.forEach(element => {
     })
 })
 
-btnArmador.addEventListener("click", () => {
+$("#btnArmador").click(function (evento) {
+    console.log("hola btn anda bien")
 
-    seccionArmadora.classList.remove("claseDisable")
-    seccionIngredientes.forEach(ingrediente => {
-        ingrediente.checked = false
-    })
-})
+    $("#seccionArmadora").toggleClass("claseDisable")
+});
+
+
+// btnArmador.addEventListener("click", () => {
+
+//     seccionArmadora.classList.remove("claseDisable")
+//     seccionIngredientes.forEach(ingrediente => {
+//         ingrediente.checked = false
+//     })
+// })
 
 
 
@@ -96,7 +103,8 @@ if (getLocalStorage("hambur") != null) {
 
 
 
-btnSubmit.addEventListener("click", function (event) {
+$("#btnSubmit").click(function (event) {
+    console.log("jquery anda bien")
     event.preventDefault();
     let contenedor = document.createElement("div")
     contenedor.innerHTML = `<h4> los ingredientes elegidos son ${arrayIngr}</h4>`
@@ -105,14 +113,27 @@ btnSubmit.addEventListener("click", function (event) {
     arrayHamburgesas.push(new hamburgesasAlVapor(arrayIngr));
 
     saveLocalStorage("hambur", arrayHamburgesas);
-
-
-
 })
+
+// btnSubmit.addEventListener("click", function (event) {
+//     event.preventDefault();
+//     let contenedor = document.createElement("div")
+//     contenedor.innerHTML = `<h4> los ingredientes elegidos son ${arrayIngr}</h4>`
+//     document.body.appendChild(contenedor);
+
+//     arrayHamburgesas.push(new hamburgesasAlVapor(arrayIngr));
+
+//     saveLocalStorage("hambur", arrayHamburgesas);
+
+
+
+// })
 
 btnreset.addEventListener("click", function (event) {
     arrayIngr = [];
 })
+
+
 
 class hamburgesasAlVapor {
     constructor(ingredientes) {
